@@ -26,3 +26,13 @@ keymap.set("c", "<C-v>", "<C-r>+", { desc = "Paste from clipboard in command mod
 
 -- 额外建议：Ctrl + A 全选
 keymap.set("n", "<C-a>", "ggVG", { desc = "Select all" })
+
+-- 处理Copilot Native的Tab键位冲突
+vim.keymap.set("i", "<Tab>", function()
+  if vim.lsp.inline_completion and vim.lsp.inline_completion.get() then
+    vim.lsp.inline_completion.accept()
+    return ""
+  else
+    return "<Tab>"
+  end
+end, { expr = true, silent = true, desc = "Accept Copilot Native with Tab" })

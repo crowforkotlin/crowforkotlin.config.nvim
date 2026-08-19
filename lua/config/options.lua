@@ -21,3 +21,5 @@ if vim.fn.has("win32") == 1 then
   vim.opt.shellpipe = ">"
   vim.opt.shellredir = ">"
 end
+vim.opt.number = true
+vim.opt.relativenumber = false

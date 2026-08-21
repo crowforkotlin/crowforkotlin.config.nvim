@@ -9,7 +9,7 @@ return {
           "bash",
           "kdl",
           "yaml",
-          "dosini",
+          "ini",
           "json",
           "toml",
           "xml",
@@ -27,7 +27,7 @@ return {
       if register then
         register("bash", "shell")
         register("kdl", "dms")
-        register("dosini", "conf")
+        register("ini", "conf")
       end
     end,
   },
